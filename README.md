@@ -1,124 +1,280 @@
-# Portfolio Website
+# Attiq — Freelance Portfolio (EN · IT · NL · FR · DE)
 
-A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS.
+The homepage (`/`) is a multilingual freelance portfolio for AI chatbots, web & app development and UI/UX design.
+Languages have their own URLs: `/` (English), `/it`, `/nl`, `/fr`, `/de` — first-time visitors are redirected to their browser language.
 
-## Features
+**Personalise it**
 
-- 🎨 Modern and beautiful UI design
-- 📱 Fully responsive layout
-- ⚡ Fast and optimized with Next.js
-- 🎯 Smooth scrolling navigation
-- 💼 Project showcase section
-- 🛠️ Skills display with progress bars
-- 📧 Contact form
-- 🌐 Social media links
+| What | Where |
+| --- | --- |
+| Name, email, WhatsApp, LinkedIn, GitHub, booking link, prices, projects, tech list | `src/portfolio/config.ts` |
+| All texts in the 5 languages | `src/i18n/translations.ts` |
+| Sections (hero, services, work, pricing, FAQ, contact…) | `src/components/portfolio/` |
+| Colours, animations | `src/styles/globals.css` |
 
-## Getting Started
+The e-commerce demo below now lives at `/shop` and is shown as a project in the portfolio.
 
-### Installation
+---
+
+# FlockByAttiq - E-commerce Platform
+
+A modern, full-stack e-commerce platform built with Next.js, MongoDB, and TypeScript. Features include user authentication, product management, secure payments, and business analytics.
+
+## 🚀 Features
+
+- **User Authentication**: Complete login/signup system with JWT tokens
+- **Product Management**: Full CRUD operations for products with categories
+- **Secure Payments**: Stripe integration for secure transactions
+- **Business Analytics**: Comprehensive dashboard with sales insights
+- **AI Chatbot**: Intelligent customer support and recommendations
+- **Responsive Design**: Modern UI with Tailwind CSS
+- **Database Integration**: MongoDB with Mongoose ODM
+
+## 🛠️ Tech Stack
+
+- **Frontend**: Next.js 15, React 19, TypeScript
+- **Styling**: Tailwind CSS
+- **Database**: MongoDB with Mongoose
+- **Authentication**: JWT tokens with bcryptjs
+- **State Management**: React Context API
+- **Notifications**: React Hot Toast
+- **Icons**: Lucide React
+
+## 📋 Prerequisites
+
+- Node.js 18+ 
+- MongoDB (local or cloud)
+- npm or yarn
+
+## 🚀 Quick Start
+
+### 1. Clone and Install
 
 ```bash
+git clone <your-repo-url>
+cd my-next-app
 npm install
-# or
-yarn install
-# or
-pnpm install
 ```
 
-### Development
+### 2. Environment Setup
 
-Run the development server:
+Create a `.env.local` file in the root directory:
+
+```bash
+cp env.example .env.local
+```
+
+Update the environment variables:
+
+```env
+MONGODB_URI=mongodb://localhost:27017/flockbyattiq
+JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
+```
+
+### 3. Database Setup
+
+#### Option A: Using the initialization script (Recommended)
+
+```bash
+# Make the script executable (Unix/Mac)
+chmod +x public/init-database.sh
+
+# Run the initialization script
+./public/init-database.sh
+```
+
+#### Option B: Manual setup
+
+1. Start MongoDB:
+   ```bash
+   # macOS
+   brew services start mongodb-community
+   
+   # Ubuntu
+   sudo systemctl start mongod
+   
+   # Windows
+   net start MongoDB
+   ```
+
+2. Run the database initialization:
+   ```bash
+   node public/init-database.js
+   ```
+
+### 4. Start the Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### Build
+## 🔑 Default Credentials
 
-Build the production version:
+After running the database initialization script, you can login with:
 
-```bash
-npm run build
-# or
-yarn build
-# or
-pnpm build
-```
+- **Email**: admin@flockbyattiq.com
+- **Password**: admin123
 
-### Start Production Server
-
-```bash
-npm start
-# or
-yarn start
-# or
-pnpm start
-```
-
-## Customization
-
-### Update Personal Information
-
-Edit `src/models/data.ts` to customize:
-
-- **Personal Info**: Name, title, bio, email, location
-- **Social Links**: Add your GitHub, LinkedIn, Twitter, etc.
-- **Skills**: Update your skills with proficiency levels
-- **Projects**: Add your projects with descriptions, technologies, and links
-
-### Styling
-
-The project uses Tailwind CSS v4. You can customize:
-
-- Colors: Edit the gradient classes in components (from-blue-600 to-purple-600)
-- Layout: Modify component structures in `src/components/`
-- Global styles: Update `src/styles/globals.css`
-
-### Components
-
-All components are located in `src/components/`:
-
-- `Header.tsx` - Navigation header
-- `Hero.tsx` - Hero section with introduction
-- `About.tsx` - About me section
-- `Skills.tsx` - Skills display
-- `Projects.tsx` - Project showcase
-- `Contact.tsx` - Contact form
-- `Footer.tsx` - Footer with links
-- `SocialIcon.tsx` - Social media icon component
-
-## Project Structure
+## 📁 Project Structure
 
 ```
 src/
-├── components/     # React components
-├── models/         # Data models
-├── pages/          # Next.js pages
-├── styles/         # Global styles
-└── types/          # TypeScript types
+├── components/          # Reusable UI components
+├── contexts/           # React contexts (Auth, etc.)
+├── lib/               # Utility libraries (MongoDB connection)
+├── models/            # MongoDB models (User, Product)
+├── pages/
+│   ├── api/           # API routes
+│   │   └── auth/      # Authentication endpoints
+│   ├── login/         # Login page
+│   ├── register/      # Registration page
+│   ├── products/      # Products listing
+│   ├── cart/          # Shopping cart
+│   ├── checkout/      # Checkout process
+│   └── analytics/     # Business analytics
+└── styles/            # Global styles
 ```
 
-## Technologies Used
+## 🔐 Authentication
 
-- [Next.js](https://nextjs.org) - React framework
-- [TypeScript](https://www.typescriptlang.org) - Type safety
-- [Tailwind CSS](https://tailwindcss.com) - Styling
-- [React](https://react.dev) - UI library
+The app uses JWT-based authentication with the following endpoints:
 
-## Deploy
+- `POST /api/auth/register` - User registration
+- `POST /api/auth/login` - User login
+- `GET /api/auth/me` - Get current user
+- `POST /api/auth/logout` - User logout
 
-The easiest way to deploy is using [Vercel](https://vercel.com):
+## 🗄️ Database Models
+
+### User Model
+- Personal information (name, email, password)
+- Role-based access (user/admin)
+- Profile data (avatar, phone, address)
+- Authentication fields (verification, reset tokens)
+
+### Product Model
+- Product details (name, description, price)
+- Inventory management (stock, SKU)
+- Categorization (category, subcategory, tags)
+- Media (images, specifications)
+- Analytics (rating, review count)
+
+## 🎨 UI Components
+
+- **Responsive Design**: Mobile-first approach
+- **Modern Styling**: Gradient backgrounds, glassmorphism effects
+- **Interactive Elements**: Hover animations, smooth transitions
+- **Form Validation**: Real-time validation with user feedback
+- **Toast Notifications**: Success/error messages
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
 
 1. Push your code to GitHub
-2. Import your repository on Vercel
-3. Deploy!
+2. Connect your repository to Vercel
+3. Add environment variables in Vercel dashboard
+4. Deploy!
 
-## License
+### Other Platforms
 
-MIT
+The app can be deployed to any platform that supports Next.js:
+- Netlify
+- AWS Amplify
+- DigitalOcean App Platform
+- Railway
+
+## 🔧 Development
+
+### Adding New Features
+
+1. Create components in `src/components/`
+2. Add API routes in `src/pages/api/`
+3. Update models in `src/models/`
+4. Add pages in `src/pages/`
+
+### Database Operations
+
+Use the MongoDB connection from `src/lib/mongodb.ts`:
+
+```typescript
+import connectDB from '../lib/mongodb';
+import User from '../models/User';
+
+// In your API route
+await connectDB();
+const users = await User.find();
+```
+
+## 📝 API Documentation
+
+### Authentication Endpoints
+
+#### Register User
+```http
+POST /api/auth/register
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "password": "password123"
+}
+```
+
+#### Login User
+```http
+POST /api/auth/login
+Content-Type: application/json
+
+{
+  "email": "john@example.com",
+  "password": "password123"
+}
+```
+
+#### Get Current User
+```http
+GET /api/auth/me
+Authorization: Bearer <jwt-token>
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 🆘 Support
+
+If you encounter any issues:
+
+1. Check the console for error messages
+2. Ensure MongoDB is running
+3. Verify environment variables are set correctly
+4. Check the database connection
+
+## 🔮 Future Enhancements
+
+- [ ] Email verification system
+- [ ] Password reset functionality
+- [ ] Social media login
+- [ ] Advanced search and filtering
+- [ ] Order tracking system
+- [ ] Multi-language support
+- [ ] Mobile app (React Native)
+- [ ] Admin dashboard
+- [ ] Inventory management
+- [ ] Customer reviews and ratings
+
+---
+
+Built with ❤️ by FlockByAttiq Team

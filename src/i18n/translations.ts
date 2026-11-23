@@ -1,0 +1,1049 @@
+export const locales = ['en', 'it', 'nl', 'fr', 'de'] as const;
+export type Locale = (typeof locales)[number];
+export const defaultLocale: Locale = 'en';
+
+export const localeLabels: Record<Locale, { short: string; name: string }> = {
+  en: { short: 'EN', name: 'English' },
+  it: { short: 'IT', name: 'Italiano' },
+  nl: { short: 'NL', name: 'Nederlands' },
+  fr: { short: 'FR', name: 'Français' },
+  de: { short: 'DE', name: 'Deutsch' },
+};
+
+/* ───────────────────────────── ENGLISH ───────────────────────────── */
+const en = {
+  meta: {
+    title: 'Attiq — AI Chatbots, Web & App Development, UI/UX Design',
+    description:
+      'Freelance developer based in Florence, Italy, working with clients across Italy & Europe. I build AI chatbots, fast websites, web & mobile apps and modern UI/UX design that turn visitors into customers.',
+  },
+  nav: {
+    services: 'Services',
+    work: 'Work',
+    process: 'Process',
+    pricing: 'Pricing',
+    faq: 'FAQ',
+    contact: 'Contact',
+    cta: "Let's talk",
+    menu: 'Menu',
+    close: 'Close',
+    language: 'Language',
+  },
+  hero: {
+    badge: 'Available for new projects · Florence, Italy & EU',
+    titleA: 'I build',
+    titleRotate: ['AI chatbots', 'web apps', 'mobile apps', 'digital brands'],
+    titleB: 'that grow your business.',
+    subtitle:
+      'Freelance developer & designer helping startups, SMEs and agencies launch smart, fast and beautiful digital products — from idea to launch, in your language.',
+    ctaPrimary: 'Start your project',
+    ctaSecondary: 'See my work',
+    stats: [
+      { value: '24h', label: 'Response time' },
+      { value: '4', label: 'Languages' },
+      { value: '100%', label: 'Remote & on time' },
+      { value: 'GDPR', label: 'Privacy-first' },
+    ],
+  },
+  chatDemo: {
+    name: 'AI Assistant',
+    status: 'Online · replies instantly',
+    messages: [
+      { from: 'user', text: 'Hi! Can I book a table for 4 tonight?' },
+      { from: 'bot', text: 'Of course! 🍝 We have 19:30 or 21:00 available. Which one works for you?' },
+      { from: 'user', text: '21:00 please' },
+      { from: 'bot', text: 'Done ✅ Table for 4 at 21:00. I just sent the confirmation to your email.' },
+    ],
+    input: 'Type a message…',
+    caption: 'Live demo · 24/7 AI chatbot',
+  },
+  marquee: { label: 'Technologies I work with' },
+  services: {
+    eyebrow: 'Services',
+    title: 'Everything you need to go digital',
+    subtitle: 'High-demand services, delivered end-to-end by one dedicated partner.',
+    popular: 'Most requested',
+    items: {
+      chatbots: {
+        title: 'AI Chatbots & Agents',
+        desc: 'Custom AI assistants trained on your data that answer customers, capture leads and book appointments 24/7 — on your website, WhatsApp or Instagram.',
+        points: ['GPT / Claude integration', 'Knowledge base (RAG)', 'WhatsApp & web widget', 'Multilingual'],
+      },
+      web: {
+        title: 'Web Development',
+        desc: 'Lightning-fast websites and web apps built with Next.js — SEO-optimised and easy to manage.',
+        points: ['Landing pages & websites', 'SaaS & dashboards', 'CMS & SEO'],
+      },
+      mobile: {
+        title: 'Mobile App Development',
+        desc: 'Cross-platform iOS & Android apps with a native feel, from MVP to App Store.',
+        points: ['React Native / Flutter', 'Push notifications', 'Store publishing'],
+      },
+      design: {
+        title: 'UI/UX & Brand Design',
+        desc: 'Modern, conversion-focused interfaces and brand identities your customers will remember.',
+        points: ['Figma prototypes', 'Design systems', 'Logo & identity'],
+      },
+      automation: {
+        title: 'AI Automation',
+        desc: 'Connect your tools and let AI do the repetitive work: emails, documents, CRM, reports.',
+        points: ['Workflow automation', 'API integrations', 'Custom AI tools'],
+      },
+      ecommerce: {
+        title: 'E-commerce',
+        desc: 'Online stores with secure payments, inventory and analytics that are ready to sell.',
+        points: ['Stripe & PayPal', 'Shopify / custom', 'Analytics'],
+      },
+    },
+  },
+  work: {
+    eyebrow: 'Selected work',
+    title: 'Projects that speak for themselves',
+    subtitle: 'A selection of products and concepts I designed and built.',
+    live: 'Live project',
+    concept: 'Concept',
+    view: 'View project',
+    soon: 'Case study soon',
+    projects: {
+      flock: {
+        title: 'Flock — Full-stack E-commerce',
+        category: 'Web app · E-commerce',
+        desc: 'Complete online store with authentication, cart, Stripe payments, order tracking, analytics and a built-in AI shopping assistant.',
+      },
+      assistant: {
+        title: 'AI Customer-Support Agent',
+        category: 'AI chatbot',
+        desc: 'Multilingual assistant that answers FAQs from company documents and hands over to a human when needed — on web and WhatsApp.',
+      },
+      booking: {
+        title: 'Restaurant Booking App',
+        category: 'Mobile app',
+        desc: 'iOS & Android app for table reservations, menus and loyalty points with real-time availability.',
+      },
+      brand: {
+        title: 'Startup Brand & UI Kit',
+        category: 'UI/UX design',
+        desc: 'Visual identity, design system and high-fidelity prototypes for a fintech startup landing page.',
+      },
+    },
+  },
+  process: {
+    eyebrow: 'Process',
+    title: 'From idea to launch in 4 clear steps',
+    subtitle: 'Transparent, collaborative and on schedule — you always know what happens next.',
+    steps: [
+      { title: 'Discovery call', desc: 'A free 30-minute call to understand your goals, audience and budget.' },
+      { title: 'Proposal & design', desc: 'A fixed-price proposal, timeline and clickable design before any code is written.' },
+      { title: 'Build & iterate', desc: 'Weekly demos and a staging link so you can follow the progress and give feedback.' },
+      { title: 'Launch & support', desc: 'Deployment, training and ongoing maintenance so your product keeps performing.' },
+    ],
+  },
+  why: {
+    eyebrow: 'Why work with me',
+    title: 'A partner, not just a developer',
+    items: [
+      { title: 'Business-first', desc: 'Every feature is built to bring you customers, leads or saved time.' },
+      { title: 'Fixed prices', desc: 'Clear quotes with no surprises. You know the cost before we start.' },
+      { title: 'European time zone', desc: 'Working on CET hours with fast replies in English, Italian, Dutch or French.' },
+      { title: 'GDPR & security', desc: 'Privacy-by-design, secure hosting and data handled the European way.' },
+    ],
+  },
+  pricing: {
+    eyebrow: 'Pricing',
+    title: 'Simple, transparent packages',
+    subtitle: 'Every project is different — these are starting points. Get an exact quote in 24 hours.',
+    from: 'from',
+    custom: 'Custom quote',
+    popular: 'Popular',
+    cta: 'Get a quote',
+    note: 'Prices excl. VAT. Monthly maintenance plans available.',
+    plans: [
+      {
+        name: 'Website',
+        desc: 'For professionals and small businesses that need a strong online presence.',
+        features: ['Up to 5 pages, custom design', 'Mobile-first & fast', 'SEO setup & analytics', 'Contact form & WhatsApp', 'Delivered in 2–3 weeks'],
+      },
+      {
+        name: 'AI Chatbot',
+        desc: 'Automate customer support and lead generation around the clock.',
+        features: ['Trained on your content', 'Website widget or WhatsApp', 'Lead capture & booking', 'Up to 4 languages', 'Dashboard & monthly report'],
+      },
+      {
+        name: 'Web / Mobile App',
+        desc: 'Custom platforms, SaaS, marketplaces and mobile apps built to scale.',
+        features: ['UX research & prototype', 'Full-stack development', 'iOS, Android & web', 'Payments & integrations', 'Launch & maintenance'],
+      },
+    ],
+  },
+  faq: {
+    eyebrow: 'FAQ',
+    title: 'Questions, answered',
+    items: [
+      { q: 'Do you work with clients in Italy?', a: 'Yes. I work with businesses all over Italy and Europe, fully remote, and can communicate in Italian, English, Dutch or French. Invoices are issued according to EU rules.' },
+      { q: 'How long does a project take?', a: 'A website usually takes 2–3 weeks, an AI chatbot 1–3 weeks, and a custom app 6–12 weeks depending on its scope. You get a precise timeline in the proposal.' },
+      { q: 'How does payment work?', a: 'Usually 40% upfront, 30% at the design approval and 30% at launch. For bigger projects we split it into milestones.' },
+      { q: 'Will the AI chatbot respect GDPR?', a: 'Yes. I use EU-hosted infrastructure where possible, data minimisation and clear consent, and I can sign a data processing agreement (DPA).' },
+      { q: 'Can I update the website myself?', a: 'Absolutely. I can connect an easy CMS so you can edit texts, images and blog posts without touching code.' },
+      { q: 'Do you offer support after launch?', a: 'Yes — monthly plans cover hosting, updates, backups, small changes and chatbot improvements.' },
+    ],
+  },
+  contact: {
+    eyebrow: 'Contact',
+    title: "Let's build something great together",
+    subtitle: "Tell me about your project. I'll reply within 24 hours with ideas and a free estimate.",
+    name: 'Your name',
+    email: 'Email',
+    service: 'Service',
+    budget: 'Budget',
+    message: 'Project details',
+    messagePlaceholder: 'What would you like to build? Any deadline?',
+    send: 'Send message',
+    success: 'Your email app is opening with the message ready — just press send. Thank you!',
+    or: 'or reach me directly',
+    whatsapp: 'WhatsApp',
+    emailMe: 'Email',
+    booking: 'Book a call',
+    select: 'Select…',
+    budgets: ['< €1,000', '€1,000 – €3,000', '€3,000 – €10,000', '> €10,000', 'Not sure yet'],
+    other: 'Other',
+    required: 'Please fill in your name, email and message.',
+  },
+  footer: {
+    tagline: 'AI chatbots, web & mobile apps and design for ambitious businesses.',
+    rights: 'All rights reserved.',
+    backToTop: 'Back to top',
+    location: 'Based in Florence, Italy · Working worldwide',
+  },
+};
+
+export type Dict = typeof en;
+
+/* ───────────────────────────── ITALIANO ───────────────────────────── */
+const it: Dict = {
+  meta: {
+    title: 'Attiq — Chatbot AI, Sviluppo Web & App, Design UI/UX',
+    description:
+      'Sviluppatore freelance a Firenze, al servizio di clienti in tutta Italia ed Europa. Realizzo chatbot AI, siti veloci, app web e mobile e design UI/UX moderno che trasformano i visitatori in clienti.',
+  },
+  nav: {
+    services: 'Servizi',
+    work: 'Progetti',
+    process: 'Metodo',
+    pricing: 'Prezzi',
+    faq: 'FAQ',
+    contact: 'Contatti',
+    cta: 'Parliamone',
+    menu: 'Menu',
+    close: 'Chiudi',
+    language: 'Lingua',
+  },
+  hero: {
+    badge: 'Disponibile per nuovi progetti · Firenze, Italia & UE',
+    titleA: 'Creo',
+    titleRotate: ['chatbot AI', 'web app', 'app mobile', 'brand digitali'],
+    titleB: 'che fanno crescere il tuo business.',
+    subtitle:
+      'Sviluppatore e designer freelance: aiuto startup, PMI e agenzie a lanciare prodotti digitali intelligenti, veloci e belli — dall’idea al lancio, nella tua lingua.',
+    ctaPrimary: 'Inizia il tuo progetto',
+    ctaSecondary: 'Guarda i progetti',
+    stats: [
+      { value: '24h', label: 'Tempo di risposta' },
+      { value: '4', label: 'Lingue' },
+      { value: '100%', label: 'Da remoto e puntuale' },
+      { value: 'GDPR', label: 'Privacy al primo posto' },
+    ],
+  },
+  chatDemo: {
+    name: 'Assistente AI',
+    status: 'Online · risponde subito',
+    messages: [
+      { from: 'user', text: 'Ciao! Posso prenotare un tavolo per 4 stasera?' },
+      { from: 'bot', text: 'Certo! 🍝 Abbiamo disponibilità alle 19:30 o alle 21:00. Quale preferisci?' },
+      { from: 'user', text: 'Alle 21:00, grazie' },
+      { from: 'bot', text: 'Fatto ✅ Tavolo per 4 alle 21:00. Ti ho inviato la conferma via email.' },
+    ],
+    input: 'Scrivi un messaggio…',
+    caption: 'Demo live · chatbot AI 24/7',
+  },
+  marquee: { label: 'Tecnologie che utilizzo' },
+  services: {
+    eyebrow: 'Servizi',
+    title: 'Tutto ciò che serve per crescere online',
+    subtitle: 'I servizi più richiesti, realizzati dall’inizio alla fine da un unico partner dedicato.',
+    popular: 'Il più richiesto',
+    items: {
+      chatbots: {
+        title: 'Chatbot & Agenti AI',
+        desc: 'Assistenti AI addestrati sui tuoi dati che rispondono ai clienti, raccolgono contatti e fissano appuntamenti 24/7 — sul sito, su WhatsApp o Instagram.',
+        points: ['Integrazione GPT / Claude', 'Knowledge base (RAG)', 'WhatsApp & widget web', 'Multilingua'],
+      },
+      web: {
+        title: 'Sviluppo Web',
+        desc: 'Siti e web app velocissimi realizzati con Next.js — ottimizzati SEO e facili da gestire.',
+        points: ['Landing page e siti web', 'SaaS e dashboard', 'CMS e SEO'],
+      },
+      mobile: {
+        title: 'Sviluppo App Mobile',
+        desc: 'App iOS e Android multipiattaforma con esperienza nativa, dall’MVP all’App Store.',
+        points: ['React Native / Flutter', 'Notifiche push', 'Pubblicazione sugli store'],
+      },
+      design: {
+        title: 'Design UI/UX & Brand',
+        desc: 'Interfacce moderne orientate alla conversione e identità visive che i clienti ricorderanno.',
+        points: ['Prototipi Figma', 'Design system', 'Logo e identità'],
+      },
+      automation: {
+        title: 'Automazione AI',
+        desc: 'Collega i tuoi strumenti e lascia all’AI il lavoro ripetitivo: email, documenti, CRM, report.',
+        points: ['Automazione dei processi', 'Integrazioni API', 'Strumenti AI su misura'],
+      },
+      ecommerce: {
+        title: 'E-commerce',
+        desc: 'Negozi online con pagamenti sicuri, gestione magazzino e statistiche, pronti a vendere.',
+        points: ['Stripe & PayPal', 'Shopify / su misura', 'Analisi dati'],
+      },
+    },
+  },
+  work: {
+    eyebrow: 'Progetti selezionati',
+    title: 'Progetti che parlano da soli',
+    subtitle: 'Una selezione di prodotti e concept che ho progettato e sviluppato.',
+    live: 'Progetto online',
+    concept: 'Concept',
+    view: 'Vedi progetto',
+    soon: 'Case study in arrivo',
+    projects: {
+      flock: {
+        title: 'Flock — E-commerce full-stack',
+        category: 'Web app · E-commerce',
+        desc: 'Negozio online completo con autenticazione, carrello, pagamenti Stripe, tracciamento ordini, statistiche e assistente AI integrato.',
+      },
+      assistant: {
+        title: 'Agente AI per l’assistenza clienti',
+        category: 'Chatbot AI',
+        desc: 'Assistente multilingua che risponde alle domande frequenti partendo dai documenti aziendali e passa la conversazione a un operatore quando serve — su web e WhatsApp.',
+      },
+      booking: {
+        title: 'App di prenotazione per ristoranti',
+        category: 'App mobile',
+        desc: 'App iOS e Android per prenotare tavoli, consultare il menu e raccogliere punti fedeltà con disponibilità in tempo reale.',
+      },
+      brand: {
+        title: 'Brand & UI kit per startup',
+        category: 'Design UI/UX',
+        desc: 'Identità visiva, design system e prototipi ad alta fedeltà per la landing page di una startup fintech.',
+      },
+    },
+  },
+  process: {
+    eyebrow: 'Metodo',
+    title: 'Dall’idea al lancio in 4 passi chiari',
+    subtitle: 'Trasparente, collaborativo e nei tempi — sai sempre cosa succede dopo.',
+    steps: [
+      { title: 'Call conoscitiva', desc: 'Una call gratuita di 30 minuti per capire obiettivi, pubblico e budget.' },
+      { title: 'Proposta & design', desc: 'Preventivo a prezzo fisso, tempistiche e design cliccabile prima di scrivere codice.' },
+      { title: 'Sviluppo & revisioni', desc: 'Demo settimanali e un link di anteprima per seguire i progressi e dare feedback.' },
+      { title: 'Lancio & supporto', desc: 'Messa online, formazione e manutenzione continua per mantenere il prodotto performante.' },
+    ],
+  },
+  why: {
+    eyebrow: 'Perché scegliere me',
+    title: 'Un partner, non solo uno sviluppatore',
+    items: [
+      { title: 'Orientato al business', desc: 'Ogni funzionalità è pensata per portarti clienti, contatti o tempo risparmiato.' },
+      { title: 'Prezzi fissi', desc: 'Preventivi chiari e senza sorprese. Conosci il costo prima di iniziare.' },
+      { title: 'Fuso orario europeo', desc: 'Lavoro in orario CET con risposte rapide in italiano, inglese, olandese o francese.' },
+      { title: 'GDPR & sicurezza', desc: 'Privacy by design, hosting sicuro e dati gestiti secondo le regole europee.' },
+    ],
+  },
+  pricing: {
+    eyebrow: 'Prezzi',
+    title: 'Pacchetti semplici e trasparenti',
+    subtitle: 'Ogni progetto è diverso: questi sono punti di partenza. Ricevi un preventivo preciso entro 24 ore.',
+    from: 'da',
+    custom: 'Preventivo su misura',
+    popular: 'Popolare',
+    cta: 'Richiedi un preventivo',
+    note: 'Prezzi IVA esclusa. Disponibili piani di manutenzione mensili.',
+    plans: [
+      {
+        name: 'Sito web',
+        desc: 'Per professionisti e piccole imprese che vogliono una presenza online efficace.',
+        features: ['Fino a 5 pagine, design su misura', 'Mobile-first e veloce', 'Configurazione SEO e analytics', 'Modulo contatti e WhatsApp', 'Consegna in 2–3 settimane'],
+      },
+      {
+        name: 'Chatbot AI',
+        desc: 'Automatizza assistenza clienti e acquisizione contatti, giorno e notte.',
+        features: ['Addestrato sui tuoi contenuti', 'Widget sul sito o WhatsApp', 'Raccolta contatti e prenotazioni', 'Fino a 4 lingue', 'Dashboard e report mensile'],
+      },
+      {
+        name: 'Web / App mobile',
+        desc: 'Piattaforme su misura, SaaS, marketplace e app mobile pensate per crescere.',
+        features: ['Analisi UX e prototipo', 'Sviluppo full-stack', 'iOS, Android e web', 'Pagamenti e integrazioni', 'Lancio e manutenzione'],
+      },
+    ],
+  },
+  faq: {
+    eyebrow: 'FAQ',
+    title: 'Domande frequenti',
+    items: [
+      { q: 'Lavori con clienti in Italia?', a: 'Sì. Lavoro con aziende in tutta Italia e in Europa, completamente da remoto, e posso comunicare in italiano, inglese, olandese o francese. Le fatture sono emesse secondo le norme UE.' },
+      { q: 'Quanto tempo richiede un progetto?', a: 'Un sito web richiede di solito 2–3 settimane, un chatbot AI 1–3 settimane e un’app su misura 6–12 settimane in base alla complessità. Nella proposta trovi tempistiche precise.' },
+      { q: 'Come funzionano i pagamenti?', a: 'Di solito 40% all’avvio, 30% all’approvazione del design e 30% al lancio. Per i progetti più grandi suddividiamo in milestone.' },
+      { q: 'Il chatbot AI rispetta il GDPR?', a: 'Sì. Uso infrastrutture ospitate nell’UE quando possibile, minimizzazione dei dati e consenso chiaro, e posso firmare un accordo sul trattamento dei dati (DPA).' },
+      { q: 'Posso aggiornare il sito da solo?', a: 'Certamente. Posso collegare un CMS semplice per modificare testi, immagini e articoli senza toccare il codice.' },
+      { q: 'Offri supporto dopo il lancio?', a: 'Sì — i piani mensili includono hosting, aggiornamenti, backup, piccole modifiche e miglioramenti del chatbot.' },
+    ],
+  },
+  contact: {
+    eyebrow: 'Contatti',
+    title: 'Realizziamo qualcosa di straordinario insieme',
+    subtitle: 'Raccontami il tuo progetto. Ti rispondo entro 24 ore con idee e un preventivo gratuito.',
+    name: 'Il tuo nome',
+    email: 'Email',
+    service: 'Servizio',
+    budget: 'Budget',
+    message: 'Dettagli del progetto',
+    messagePlaceholder: 'Cosa vorresti realizzare? Hai una scadenza?',
+    send: 'Invia messaggio',
+    success: 'Si sta aprendo la tua app email con il messaggio pronto — premi semplicemente invia. Grazie!',
+    or: 'oppure contattami direttamente',
+    whatsapp: 'WhatsApp',
+    emailMe: 'Email',
+    booking: 'Prenota una call',
+    select: 'Seleziona…',
+    budgets: ['< 1.000 €', '1.000 – 3.000 €', '3.000 – 10.000 €', '> 10.000 €', 'Non so ancora'],
+    other: 'Altro',
+    required: 'Inserisci nome, email e messaggio.',
+  },
+  footer: {
+    tagline: 'Chatbot AI, app web e mobile e design per aziende ambiziose.',
+    rights: 'Tutti i diritti riservati.',
+    backToTop: 'Torna su',
+    location: 'Con base a Firenze · Lavoro in tutto il mondo',
+  },
+};
+
+/* ───────────────────────────── NEDERLANDS ───────────────────────────── */
+const nl: Dict = {
+  meta: {
+    title: 'Attiq — AI-chatbots, web- & appontwikkeling, UI/UX-design',
+    description:
+      'Freelance developer gevestigd in Florence, Italië, voor klanten in heel Italië en Europa. Ik bouw AI-chatbots, snelle websites, web- en mobiele apps en modern UI/UX-design dat bezoekers omzet in klanten.',
+  },
+  nav: {
+    services: 'Diensten',
+    work: 'Werk',
+    process: 'Werkwijze',
+    pricing: 'Prijzen',
+    faq: 'FAQ',
+    contact: 'Contact',
+    cta: 'Laten we praten',
+    menu: 'Menu',
+    close: 'Sluiten',
+    language: 'Taal',
+  },
+  hero: {
+    badge: 'Beschikbaar voor nieuwe projecten · Florence, Italië & EU',
+    titleA: 'Ik bouw',
+    titleRotate: ['AI-chatbots', 'webapps', 'mobiele apps', 'digitale merken'],
+    titleB: 'die je bedrijf laten groeien.',
+    subtitle:
+      'Freelance developer en designer die startups, mkb-bedrijven en bureaus helpt slimme, snelle en mooie digitale producten te lanceren — van idee tot lancering, in jouw taal.',
+    ctaPrimary: 'Start je project',
+    ctaSecondary: 'Bekijk mijn werk',
+    stats: [
+      { value: '24u', label: 'Reactietijd' },
+      { value: '4', label: 'Talen' },
+      { value: '100%', label: 'Remote & op tijd' },
+      { value: 'AVG', label: 'Privacy voorop' },
+    ],
+  },
+  chatDemo: {
+    name: 'AI-assistent',
+    status: 'Online · reageert direct',
+    messages: [
+      { from: 'user', text: 'Hoi! Kan ik vanavond een tafel voor 4 reserveren?' },
+      { from: 'bot', text: 'Zeker! 🍝 We hebben plek om 19:30 of 21:00. Wat past jou het best?' },
+      { from: 'user', text: '21:00 graag' },
+      { from: 'bot', text: 'Geregeld ✅ Tafel voor 4 om 21:00. De bevestiging staat in je mailbox.' },
+    ],
+    input: 'Typ een bericht…',
+    caption: 'Live demo · 24/7 AI-chatbot',
+  },
+  marquee: { label: 'Technologieën waarmee ik werk' },
+  services: {
+    eyebrow: 'Diensten',
+    title: 'Alles wat je nodig hebt om digitaal te groeien',
+    subtitle: 'De meest gevraagde diensten, van begin tot eind geleverd door één vaste partner.',
+    popular: 'Meest gevraagd',
+    items: {
+      chatbots: {
+        title: 'AI-chatbots & agents',
+        desc: 'AI-assistenten getraind op jouw data die klanten antwoorden, leads verzamelen en afspraken inplannen — 24/7 op je website, WhatsApp of Instagram.',
+        points: ['GPT / Claude-integratie', 'Kennisbank (RAG)', 'WhatsApp & webwidget', 'Meertalig'],
+      },
+      web: {
+        title: 'Webontwikkeling',
+        desc: 'Razendsnelle websites en webapps gebouwd met Next.js — SEO-geoptimaliseerd en eenvoudig te beheren.',
+        points: ['Landingspagina’s & websites', 'SaaS & dashboards', 'CMS & SEO'],
+      },
+      mobile: {
+        title: 'Mobiele apps',
+        desc: 'Cross-platform iOS- en Android-apps met een native gevoel, van MVP tot App Store.',
+        points: ['React Native / Flutter', 'Pushmeldingen', 'Publicatie in stores'],
+      },
+      design: {
+        title: 'UI/UX- & merkdesign',
+        desc: 'Moderne, conversiegerichte interfaces en merkidentiteiten die klanten onthouden.',
+        points: ['Figma-prototypes', 'Designsystemen', 'Logo & huisstijl'],
+      },
+      automation: {
+        title: 'AI-automatisering',
+        desc: 'Koppel je tools en laat AI het repetitieve werk doen: e-mails, documenten, CRM, rapporten.',
+        points: ['Workflow-automatisering', 'API-koppelingen', 'Maatwerk AI-tools'],
+      },
+      ecommerce: {
+        title: 'E-commerce',
+        desc: 'Webshops met veilige betalingen, voorraadbeheer en statistieken, klaar om te verkopen.',
+        points: ['Stripe & PayPal', 'Shopify / maatwerk', 'Analytics'],
+      },
+    },
+  },
+  work: {
+    eyebrow: 'Geselecteerd werk',
+    title: 'Projecten die voor zich spreken',
+    subtitle: 'Een selectie van producten en concepten die ik heb ontworpen en gebouwd.',
+    live: 'Live project',
+    concept: 'Concept',
+    view: 'Bekijk project',
+    soon: 'Case study volgt',
+    projects: {
+      flock: {
+        title: 'Flock — Full-stack e-commerce',
+        category: 'Webapp · E-commerce',
+        desc: 'Complete webshop met inloggen, winkelwagen, Stripe-betalingen, ordertracking, statistieken en een ingebouwde AI-winkelassistent.',
+      },
+      assistant: {
+        title: 'AI-klantenservice-agent',
+        category: 'AI-chatbot',
+        desc: 'Meertalige assistent die veelgestelde vragen beantwoordt op basis van bedrijfsdocumenten en doorschakelt naar een medewerker wanneer nodig — op web en WhatsApp.',
+      },
+      booking: {
+        title: 'Reserveringsapp voor restaurants',
+        category: 'Mobiele app',
+        desc: 'iOS- en Android-app voor tafelreserveringen, menu’s en spaarpunten met realtime beschikbaarheid.',
+      },
+      brand: {
+        title: 'Merk & UI-kit voor startup',
+        category: 'UI/UX-design',
+        desc: 'Visuele identiteit, designsysteem en high-fidelity prototypes voor de landingspagina van een fintech-startup.',
+      },
+    },
+  },
+  process: {
+    eyebrow: 'Werkwijze',
+    title: 'Van idee tot lancering in 4 heldere stappen',
+    subtitle: 'Transparant, samen en op schema — je weet altijd wat de volgende stap is.',
+    steps: [
+      { title: 'Kennismakingsgesprek', desc: 'Een gratis gesprek van 30 minuten over je doelen, doelgroep en budget.' },
+      { title: 'Voorstel & design', desc: 'Een vaste prijs, planning en klikbaar ontwerp voordat er code wordt geschreven.' },
+      { title: 'Bouwen & verbeteren', desc: 'Wekelijkse demo’s en een testlink zodat je de voortgang volgt en feedback geeft.' },
+      { title: 'Lancering & support', desc: 'Livegang, uitleg en doorlopend onderhoud zodat je product blijft presteren.' },
+    ],
+  },
+  why: {
+    eyebrow: 'Waarom met mij werken',
+    title: 'Een partner, niet alleen een developer',
+    items: [
+      { title: 'Zakelijk gedacht', desc: 'Elke functie is gebouwd om klanten, leads of tijdwinst op te leveren.' },
+      { title: 'Vaste prijzen', desc: 'Heldere offertes zonder verrassingen. Je kent de kosten vooraf.' },
+      { title: 'Europese tijdzone', desc: 'Ik werk op CET-tijden en reageer snel in het Engels, Italiaans, Nederlands of Frans.' },
+      { title: 'AVG & beveiliging', desc: 'Privacy by design, veilige hosting en data volgens Europese regels.' },
+    ],
+  },
+  pricing: {
+    eyebrow: 'Prijzen',
+    title: 'Eenvoudige, transparante pakketten',
+    subtitle: 'Elk project is anders — dit zijn startpunten. Ontvang binnen 24 uur een exacte offerte.',
+    from: 'vanaf',
+    custom: 'Offerte op maat',
+    popular: 'Populair',
+    cta: 'Vraag een offerte aan',
+    note: 'Prijzen excl. btw. Maandelijkse onderhoudsplannen beschikbaar.',
+    plans: [
+      {
+        name: 'Website',
+        desc: 'Voor zelfstandigen en kleine bedrijven die sterk online willen staan.',
+        features: ['Tot 5 pagina’s, eigen ontwerp', 'Mobile-first & snel', 'SEO-instellingen & analytics', 'Contactformulier & WhatsApp', 'Klaar in 2–3 weken'],
+      },
+      {
+        name: 'AI-chatbot',
+        desc: 'Automatiseer klantenservice en leadgeneratie, dag en nacht.',
+        features: ['Getraind op jouw content', 'Websitewidget of WhatsApp', 'Leads & reserveringen', 'Tot 4 talen', 'Dashboard & maandrapport'],
+      },
+      {
+        name: 'Web- / mobiele app',
+        desc: 'Maatwerkplatforms, SaaS, marktplaatsen en mobiele apps die kunnen meegroeien.',
+        features: ['UX-onderzoek & prototype', 'Full-stack ontwikkeling', 'iOS, Android & web', 'Betalingen & koppelingen', 'Lancering & onderhoud'],
+      },
+    ],
+  },
+  faq: {
+    eyebrow: 'FAQ',
+    title: 'Veelgestelde vragen',
+    items: [
+      { q: 'Werk je met klanten in Italië en Nederland?', a: 'Ja. Ik werk volledig remote met bedrijven in heel Europa en communiceer in het Engels, Italiaans, Nederlands of Frans. Facturen volgen de EU-regels.' },
+      { q: 'Hoe lang duurt een project?', a: 'Een website duurt meestal 2–3 weken, een AI-chatbot 1–3 weken en een maatwerkapp 6–12 weken, afhankelijk van de omvang. Je krijgt een exacte planning in het voorstel.' },
+      { q: 'Hoe werkt de betaling?', a: 'Meestal 40% vooraf, 30% bij goedkeuring van het ontwerp en 30% bij lancering. Grotere projecten verdelen we in mijlpalen.' },
+      { q: 'Voldoet de AI-chatbot aan de AVG?', a: 'Ja. Ik gebruik waar mogelijk EU-hosting, dataminimalisatie en duidelijke toestemming, en kan een verwerkersovereenkomst tekenen.' },
+      { q: 'Kan ik de website zelf aanpassen?', a: 'Zeker. Ik koppel een eenvoudig CMS zodat je teksten, afbeeldingen en blogs zonder code aanpast.' },
+      { q: 'Bied je ondersteuning na de lancering?', a: 'Ja — maandplannen omvatten hosting, updates, back-ups, kleine wijzigingen en verbeteringen van de chatbot.' },
+    ],
+  },
+  contact: {
+    eyebrow: 'Contact',
+    title: 'Laten we samen iets geweldigs bouwen',
+    subtitle: 'Vertel me over je project. Binnen 24 uur ontvang je ideeën en een gratis inschatting.',
+    name: 'Je naam',
+    email: 'E-mail',
+    service: 'Dienst',
+    budget: 'Budget',
+    message: 'Projectdetails',
+    messagePlaceholder: 'Wat wil je bouwen? Is er een deadline?',
+    send: 'Verstuur bericht',
+    success: 'Je e-mailapp opent met het bericht klaar — druk alleen nog op verzenden. Bedankt!',
+    or: 'of neem direct contact op',
+    whatsapp: 'WhatsApp',
+    emailMe: 'E-mail',
+    booking: 'Plan een gesprek',
+    select: 'Kies…',
+    budgets: ['< € 1.000', '€ 1.000 – € 3.000', '€ 3.000 – € 10.000', '> € 10.000', 'Weet ik nog niet'],
+    other: 'Anders',
+    required: 'Vul je naam, e-mail en bericht in.',
+  },
+  footer: {
+    tagline: 'AI-chatbots, web- en mobiele apps en design voor ambitieuze bedrijven.',
+    rights: 'Alle rechten voorbehouden.',
+    backToTop: 'Terug naar boven',
+    location: 'Gevestigd in Florence, Italië · Werkzaam wereldwijd',
+  },
+};
+
+/* ───────────────────────────── FRANÇAIS ───────────────────────────── */
+const fr: Dict = {
+  meta: {
+    title: 'Attiq — Chatbots IA, développement web & mobile, design UI/UX',
+    description:
+      'Développeur freelance basé à Florence, en Italie, pour des clients dans toute l’Italie et l’Europe. Je crée des chatbots IA, des sites rapides, des applications web et mobiles et un design UI/UX moderne qui transforment vos visiteurs en clients.',
+  },
+  nav: {
+    services: 'Services',
+    work: 'Projets',
+    process: 'Méthode',
+    pricing: 'Tarifs',
+    faq: 'FAQ',
+    contact: 'Contact',
+    cta: 'Discutons',
+    menu: 'Menu',
+    close: 'Fermer',
+    language: 'Langue',
+  },
+  hero: {
+    badge: 'Disponible pour de nouveaux projets · Florence, Italie & UE',
+    titleA: 'Je crée des',
+    titleRotate: ['chatbots IA', 'applications web', 'applis mobiles', 'marques digitales'],
+    titleB: 'qui font grandir votre entreprise.',
+    subtitle:
+      'Développeur et designer freelance, j’aide startups, PME et agences à lancer des produits digitaux intelligents, rapides et élégants — de l’idée au lancement, dans votre langue.',
+    ctaPrimary: 'Lancer votre projet',
+    ctaSecondary: 'Voir mes projets',
+    stats: [
+      { value: '24h', label: 'Délai de réponse' },
+      { value: '4', label: 'Langues' },
+      { value: '100%', label: 'À distance et ponctuel' },
+      { value: 'RGPD', label: 'Confidentialité avant tout' },
+    ],
+  },
+  chatDemo: {
+    name: 'Assistant IA',
+    status: 'En ligne · répond instantanément',
+    messages: [
+      { from: 'user', text: 'Bonjour ! Puis-je réserver une table pour 4 ce soir ?' },
+      { from: 'bot', text: 'Bien sûr ! 🍝 Nous avons 19h30 ou 21h00 de disponible. Lequel vous convient ?' },
+      { from: 'user', text: '21h00 s’il vous plaît' },
+      { from: 'bot', text: 'C’est fait ✅ Table pour 4 à 21h00. La confirmation vient d’être envoyée par e-mail.' },
+    ],
+    input: 'Écrivez un message…',
+    caption: 'Démo en direct · chatbot IA 24h/24',
+  },
+  marquee: { label: 'Technologies que j’utilise' },
+  services: {
+    eyebrow: 'Services',
+    title: 'Tout ce qu’il faut pour réussir en ligne',
+    subtitle: 'Les services les plus demandés, réalisés de A à Z par un seul partenaire dédié.',
+    popular: 'Le plus demandé',
+    items: {
+      chatbots: {
+        title: 'Chatbots & agents IA',
+        desc: 'Des assistants IA entraînés sur vos données qui répondent à vos clients, captent des prospects et prennent des rendez-vous 24h/24 — sur votre site, WhatsApp ou Instagram.',
+        points: ['Intégration GPT / Claude', 'Base de connaissances (RAG)', 'WhatsApp & widget web', 'Multilingue'],
+      },
+      web: {
+        title: 'Développement web',
+        desc: 'Sites et applications web ultra-rapides avec Next.js — optimisés pour le SEO et faciles à gérer.',
+        points: ['Landing pages & sites', 'SaaS & tableaux de bord', 'CMS & SEO'],
+      },
+      mobile: {
+        title: 'Applications mobiles',
+        desc: 'Applications iOS et Android multiplateformes au rendu natif, du MVP à l’App Store.',
+        points: ['React Native / Flutter', 'Notifications push', 'Publication sur les stores'],
+      },
+      design: {
+        title: 'Design UI/UX & identité',
+        desc: 'Des interfaces modernes axées sur la conversion et des identités de marque mémorables.',
+        points: ['Prototypes Figma', 'Design systems', 'Logo & identité visuelle'],
+      },
+      automation: {
+        title: 'Automatisation IA',
+        desc: 'Connectez vos outils et laissez l’IA gérer les tâches répétitives : e-mails, documents, CRM, rapports.',
+        points: ['Automatisation des flux', 'Intégrations API', 'Outils IA sur mesure'],
+      },
+      ecommerce: {
+        title: 'E-commerce',
+        desc: 'Boutiques en ligne avec paiements sécurisés, gestion des stocks et statistiques, prêtes à vendre.',
+        points: ['Stripe & PayPal', 'Shopify / sur mesure', 'Analytique'],
+      },
+    },
+  },
+  work: {
+    eyebrow: 'Projets choisis',
+    title: 'Des projets qui parlent d’eux-mêmes',
+    subtitle: 'Une sélection de produits et de concepts que j’ai conçus et développés.',
+    live: 'Projet en ligne',
+    concept: 'Concept',
+    view: 'Voir le projet',
+    soon: 'Étude de cas bientôt',
+    projects: {
+      flock: {
+        title: 'Flock — E-commerce full-stack',
+        category: 'Application web · E-commerce',
+        desc: 'Boutique en ligne complète avec authentification, panier, paiements Stripe, suivi des commandes, statistiques et assistant d’achat IA intégré.',
+      },
+      assistant: {
+        title: 'Agent IA de support client',
+        category: 'Chatbot IA',
+        desc: 'Assistant multilingue qui répond aux questions fréquentes à partir des documents de l’entreprise et transfère à un humain si nécessaire — sur le web et WhatsApp.',
+      },
+      booking: {
+        title: 'Application de réservation pour restaurants',
+        category: 'Application mobile',
+        desc: 'Application iOS et Android pour réserver une table, consulter le menu et cumuler des points de fidélité en temps réel.',
+      },
+      brand: {
+        title: 'Identité & UI kit pour startup',
+        category: 'Design UI/UX',
+        desc: 'Identité visuelle, design system et prototypes haute fidélité pour la landing page d’une startup fintech.',
+      },
+    },
+  },
+  process: {
+    eyebrow: 'Méthode',
+    title: 'De l’idée au lancement en 4 étapes claires',
+    subtitle: 'Transparent, collaboratif et dans les délais — vous savez toujours ce qui vient ensuite.',
+    steps: [
+      { title: 'Appel découverte', desc: 'Un appel gratuit de 30 minutes pour comprendre vos objectifs, votre cible et votre budget.' },
+      { title: 'Proposition & design', desc: 'Un devis à prix fixe, un planning et une maquette cliquable avant toute ligne de code.' },
+      { title: 'Développement & itérations', desc: 'Des démos hebdomadaires et un lien de test pour suivre l’avancement et donner votre avis.' },
+      { title: 'Lancement & suivi', desc: 'Mise en ligne, formation et maintenance continue pour que votre produit reste performant.' },
+    ],
+  },
+  why: {
+    eyebrow: 'Pourquoi travailler avec moi',
+    title: 'Un partenaire, pas seulement un développeur',
+    items: [
+      { title: 'Orienté résultats', desc: 'Chaque fonctionnalité est pensée pour vous apporter des clients, des prospects ou du temps.' },
+      { title: 'Prix fixes', desc: 'Des devis clairs, sans surprise. Vous connaissez le coût avant de commencer.' },
+      { title: 'Fuseau horaire européen', desc: 'Horaires CET et réponses rapides en anglais, italien, néerlandais ou français.' },
+      { title: 'RGPD & sécurité', desc: 'Privacy by design, hébergement sécurisé et données gérées selon les règles européennes.' },
+    ],
+  },
+  pricing: {
+    eyebrow: 'Tarifs',
+    title: 'Des formules simples et transparentes',
+    subtitle: 'Chaque projet est unique — voici des points de départ. Recevez un devis précis sous 24 heures.',
+    from: 'à partir de',
+    custom: 'Sur devis',
+    popular: 'Populaire',
+    cta: 'Demander un devis',
+    note: 'Prix HT. Formules de maintenance mensuelles disponibles.',
+    plans: [
+      {
+        name: 'Site web',
+        desc: 'Pour les indépendants et petites entreprises qui veulent une présence en ligne solide.',
+        features: ['Jusqu’à 5 pages, design sur mesure', 'Mobile-first & rapide', 'Configuration SEO & analytics', 'Formulaire de contact & WhatsApp', 'Livré en 2 à 3 semaines'],
+      },
+      {
+        name: 'Chatbot IA',
+        desc: 'Automatisez le support client et la génération de prospects, jour et nuit.',
+        features: ['Entraîné sur vos contenus', 'Widget web ou WhatsApp', 'Prospects & réservations', 'Jusqu’à 4 langues', 'Tableau de bord & rapport mensuel'],
+      },
+      {
+        name: 'App web / mobile',
+        desc: 'Plateformes sur mesure, SaaS, marketplaces et applications mobiles conçues pour évoluer.',
+        features: ['Recherche UX & prototype', 'Développement full-stack', 'iOS, Android & web', 'Paiements & intégrations', 'Lancement & maintenance'],
+      },
+    ],
+  },
+  faq: {
+    eyebrow: 'FAQ',
+    title: 'Vos questions, mes réponses',
+    items: [
+      { q: 'Travaillez-vous avec des clients en Italie et en France ?', a: 'Oui. Je travaille entièrement à distance avec des entreprises dans toute l’Europe et je communique en anglais, italien, néerlandais ou français. Les factures respectent les règles de l’UE.' },
+      { q: 'Combien de temps dure un projet ?', a: 'Un site prend généralement 2 à 3 semaines, un chatbot IA 1 à 3 semaines et une application sur mesure 6 à 12 semaines selon le périmètre. Le planning précis figure dans la proposition.' },
+      { q: 'Comment se passe le paiement ?', a: 'En général 40 % à la commande, 30 % à la validation du design et 30 % au lancement. Les projets plus importants sont découpés en jalons.' },
+      { q: 'Le chatbot IA est-il conforme au RGPD ?', a: 'Oui. J’utilise un hébergement dans l’UE lorsque c’est possible, la minimisation des données et un consentement clair, et je peux signer un accord de traitement des données (DPA).' },
+      { q: 'Puis-je modifier le site moi-même ?', a: 'Bien sûr. Je peux connecter un CMS simple pour modifier textes, images et articles sans toucher au code.' },
+      { q: 'Proposez-vous un suivi après le lancement ?', a: 'Oui — les formules mensuelles incluent hébergement, mises à jour, sauvegardes, petites modifications et améliorations du chatbot.' },
+    ],
+  },
+  contact: {
+    eyebrow: 'Contact',
+    title: 'Construisons ensemble quelque chose de remarquable',
+    subtitle: 'Parlez-moi de votre projet. Je vous réponds sous 24 heures avec des idées et une estimation gratuite.',
+    name: 'Votre nom',
+    email: 'E-mail',
+    service: 'Service',
+    budget: 'Budget',
+    message: 'Détails du projet',
+    messagePlaceholder: 'Que souhaitez-vous créer ? Une échéance ?',
+    send: 'Envoyer le message',
+    success: 'Votre messagerie s’ouvre avec le message prêt — il ne reste qu’à cliquer sur envoyer. Merci !',
+    or: 'ou contactez-moi directement',
+    whatsapp: 'WhatsApp',
+    emailMe: 'E-mail',
+    booking: 'Réserver un appel',
+    select: 'Choisir…',
+    budgets: ['< 1 000 €', '1 000 – 3 000 €', '3 000 – 10 000 €', '> 10 000 €', 'Je ne sais pas encore'],
+    other: 'Autre',
+    required: 'Veuillez indiquer votre nom, votre e-mail et votre message.',
+  },
+  footer: {
+    tagline: 'Chatbots IA, applications web et mobiles et design pour entreprises ambitieuses.',
+    rights: 'Tous droits réservés.',
+    backToTop: 'Retour en haut',
+    location: 'Basé à Florence, Italie · Disponible dans le monde entier',
+  },
+};
+
+/* ───────────────────────────── DEUTSCH ───────────────────────────── */
+const de: Dict = {
+  meta: {
+    title: 'Attiq — KI-Chatbots, Web- & App-Entwicklung, UI/UX-Design',
+    description:
+      'Freelance-Entwickler mit Sitz in Florenz, Italien, für Kunden in ganz Italien und Europa. Ich entwickle KI-Chatbots, schnelle Websites, Web- und Mobile-Apps sowie modernes UI/UX-Design, das Besucher in Kunden verwandelt.',
+  },
+  nav: {
+    services: 'Leistungen',
+    work: 'Projekte',
+    process: 'Ablauf',
+    pricing: 'Preise',
+    faq: 'FAQ',
+    contact: 'Kontakt',
+    cta: 'Lass uns reden',
+    menu: 'Menü',
+    close: 'Schließen',
+    language: 'Sprache',
+  },
+  hero: {
+    badge: 'Verfügbar für neue Projekte · Florenz, Italien & EU',
+    titleA: 'Ich entwickle',
+    titleRotate: ['KI-Chatbots', 'Web-Apps', 'Mobile Apps', 'digitale Marken'],
+    titleB: 'die Ihr Business wachsen lassen.',
+    subtitle:
+      'Freelance-Entwickler und Designer: Ich helfe Startups, KMU und Agenturen, smarte, schnelle und schöne digitale Produkte zu launchen — von der Idee bis zum Launch.',
+    ctaPrimary: 'Projekt starten',
+    ctaSecondary: 'Meine Arbeiten',
+    stats: [
+      { value: '24h', label: 'Antwortzeit' },
+      { value: '4', label: 'Sprachen' },
+      { value: '100%', label: 'Remote & pünktlich' },
+      { value: 'DSGVO', label: 'Datenschutz zuerst' },
+    ],
+  },
+  chatDemo: {
+    name: 'KI-Assistent',
+    status: 'Online · antwortet sofort',
+    messages: [
+      { from: 'user', text: 'Hallo! Kann ich heute Abend einen Tisch für 4 reservieren?' },
+      { from: 'bot', text: 'Aber gerne! 🍝 Wir haben um 19:30 oder 21:00 Uhr frei. Was passt Ihnen besser?' },
+      { from: 'user', text: '21:00 Uhr bitte' },
+      { from: 'bot', text: 'Erledigt ✅ Tisch für 4 um 21:00 Uhr. Die Bestätigung ist per E-Mail unterwegs.' },
+    ],
+    input: 'Nachricht schreiben…',
+    caption: 'Live-Demo · KI-Chatbot rund um die Uhr',
+  },
+  marquee: { label: 'Technologien, mit denen ich arbeite' },
+  services: {
+    eyebrow: 'Leistungen',
+    title: 'Alles, was Sie für Ihren digitalen Erfolg brauchen',
+    subtitle: 'Die gefragtesten Leistungen — von Anfang bis Ende aus einer Hand.',
+    popular: 'Am gefragtesten',
+    items: {
+      chatbots: {
+        title: 'KI-Chatbots & Agenten',
+        desc: 'KI-Assistenten, trainiert mit Ihren Daten, die Kundenfragen beantworten, Leads gewinnen und Termine buchen — rund um die Uhr auf Ihrer Website, WhatsApp oder Instagram.',
+        points: ['GPT- / Claude-Integration', 'Wissensdatenbank (RAG)', 'WhatsApp & Web-Widget', 'Mehrsprachig'],
+      },
+      web: {
+        title: 'Webentwicklung',
+        desc: 'Blitzschnelle Websites und Web-Apps mit Next.js — SEO-optimiert und einfach zu pflegen.',
+        points: ['Landingpages & Websites', 'SaaS & Dashboards', 'CMS & SEO'],
+      },
+      mobile: {
+        title: 'App-Entwicklung',
+        desc: 'Plattformübergreifende iOS- und Android-Apps mit nativem Gefühl — vom MVP bis in den App Store.',
+        points: ['React Native / Flutter', 'Push-Benachrichtigungen', 'Store-Veröffentlichung'],
+      },
+      design: {
+        title: 'UI/UX- & Markendesign',
+        desc: 'Moderne, conversion-starke Oberflächen und Markenidentitäten, die im Gedächtnis bleiben.',
+        points: ['Figma-Prototypen', 'Designsysteme', 'Logo & Corporate Identity'],
+      },
+      automation: {
+        title: 'KI-Automatisierung',
+        desc: 'Verbinden Sie Ihre Tools und überlassen Sie der KI die Routinearbeit: E-Mails, Dokumente, CRM, Berichte.',
+        points: ['Workflow-Automatisierung', 'API-Integrationen', 'Individuelle KI-Tools'],
+      },
+      ecommerce: {
+        title: 'E-Commerce',
+        desc: 'Onlineshops mit sicheren Zahlungen, Lagerverwaltung und Analysen — bereit zum Verkaufen.',
+        points: ['Stripe & PayPal', 'Shopify / individuell', 'Analytics'],
+      },
+    },
+  },
+  work: {
+    eyebrow: 'Ausgewählte Arbeiten',
+    title: 'Projekte, die für sich sprechen',
+    subtitle: 'Eine Auswahl an Produkten und Konzepten, die ich gestaltet und entwickelt habe.',
+    live: 'Live-Projekt',
+    concept: 'Konzept',
+    view: 'Projekt ansehen',
+    soon: 'Case Study folgt',
+    projects: {
+      flock: {
+        title: 'Flock — Full-Stack E-Commerce',
+        category: 'Web-App · E-Commerce',
+        desc: 'Kompletter Onlineshop mit Login, Warenkorb, Stripe-Zahlungen, Bestellverfolgung, Statistiken und integriertem KI-Einkaufsassistenten.',
+      },
+      assistant: {
+        title: 'KI-Kundenservice-Agent',
+        category: 'KI-Chatbot',
+        desc: 'Mehrsprachiger Assistent, der häufige Fragen anhand von Unternehmensdokumenten beantwortet und bei Bedarf an einen Mitarbeiter übergibt — im Web und auf WhatsApp.',
+      },
+      booking: {
+        title: 'Reservierungs-App für Restaurants',
+        category: 'Mobile App',
+        desc: 'iOS- und Android-App für Tischreservierungen, Speisekarten und Treuepunkte mit Verfügbarkeit in Echtzeit.',
+      },
+      brand: {
+        title: 'Marke & UI-Kit für ein Startup',
+        category: 'UI/UX-Design',
+        desc: 'Visuelle Identität, Designsystem und High-Fidelity-Prototypen für die Landingpage eines Fintech-Startups.',
+      },
+    },
+  },
+  process: {
+    eyebrow: 'Ablauf',
+    title: 'Von der Idee zum Launch in 4 klaren Schritten',
+    subtitle: 'Transparent, partnerschaftlich und termingerecht — Sie wissen immer, was als Nächstes passiert.',
+    steps: [
+      { title: 'Kennenlerngespräch', desc: 'Ein kostenloses 30-minütiges Gespräch über Ihre Ziele, Zielgruppe und Ihr Budget.' },
+      { title: 'Angebot & Design', desc: 'Festpreisangebot, Zeitplan und klickbares Design, bevor eine Zeile Code entsteht.' },
+      { title: 'Entwicklung & Feedback', desc: 'Wöchentliche Demos und ein Testlink, damit Sie den Fortschritt verfolgen und Feedback geben können.' },
+      { title: 'Launch & Support', desc: 'Go-live, Einweisung und laufende Wartung, damit Ihr Produkt dauerhaft performt.' },
+    ],
+  },
+  why: {
+    eyebrow: 'Warum mit mir arbeiten',
+    title: 'Ein Partner, nicht nur ein Entwickler',
+    items: [
+      { title: 'Business-orientiert', desc: 'Jede Funktion soll Ihnen Kunden, Leads oder gesparte Zeit bringen.' },
+      { title: 'Festpreise', desc: 'Klare Angebote ohne Überraschungen. Sie kennen die Kosten vor dem Start.' },
+      { title: 'Europäische Zeitzone', desc: 'Arbeitszeiten nach MEZ und schnelle Antworten auf Englisch, Italienisch, Niederländisch oder Französisch.' },
+      { title: 'DSGVO & Sicherheit', desc: 'Privacy by Design, sicheres Hosting und Datenverarbeitung nach europäischen Regeln.' },
+    ],
+  },
+  pricing: {
+    eyebrow: 'Preise',
+    title: 'Einfache, transparente Pakete',
+    subtitle: 'Jedes Projekt ist anders — das sind Richtwerte. Ein genaues Angebot erhalten Sie innerhalb von 24 Stunden.',
+    from: 'ab',
+    custom: 'Individuelles Angebot',
+    popular: 'Beliebt',
+    cta: 'Angebot anfordern',
+    note: 'Preise zzgl. MwSt. Monatliche Wartungspakete verfügbar.',
+    plans: [
+      {
+        name: 'Website',
+        desc: 'Für Selbstständige und kleine Unternehmen, die online stark auftreten wollen.',
+        features: ['Bis zu 5 Seiten, individuelles Design', 'Mobile-first & schnell', 'SEO-Einrichtung & Analytics', 'Kontaktformular & WhatsApp', 'Fertig in 2–3 Wochen'],
+      },
+      {
+        name: 'KI-Chatbot',
+        desc: 'Automatisieren Sie Kundenservice und Leadgewinnung — rund um die Uhr.',
+        features: ['Mit Ihren Inhalten trainiert', 'Website-Widget oder WhatsApp', 'Leads & Buchungen', 'Bis zu 4 Sprachen', 'Dashboard & Monatsbericht'],
+      },
+      {
+        name: 'Web- / Mobile App',
+        desc: 'Individuelle Plattformen, SaaS, Marktplätze und Mobile Apps, die mitwachsen.',
+        features: ['UX-Analyse & Prototyp', 'Full-Stack-Entwicklung', 'iOS, Android & Web', 'Zahlungen & Integrationen', 'Launch & Wartung'],
+      },
+    ],
+  },
+  faq: {
+    eyebrow: 'FAQ',
+    title: 'Häufige Fragen',
+    items: [
+      { q: 'Arbeiten Sie mit Kunden in Deutschland, Österreich und der Schweiz?', a: 'Ja. Ich arbeite vollständig remote mit Unternehmen in ganz Europa und kommuniziere auf Englisch, Italienisch, Niederländisch oder Französisch. Rechnungen entsprechen den EU-Vorgaben.' },
+      { q: 'Wie lange dauert ein Projekt?', a: 'Eine Website dauert meist 2–3 Wochen, ein KI-Chatbot 1–3 Wochen und eine individuelle App je nach Umfang 6–12 Wochen. Den genauen Zeitplan finden Sie im Angebot.' },
+      { q: 'Wie läuft die Bezahlung ab?', a: 'In der Regel 40 % zu Projektbeginn, 30 % bei Design-Freigabe und 30 % zum Launch. Größere Projekte teilen wir in Meilensteine auf.' },
+      { q: 'Ist der KI-Chatbot DSGVO-konform?', a: 'Ja. Ich nutze wenn möglich Hosting in der EU, Datenminimierung und klare Einwilligungen und kann einen Auftragsverarbeitungsvertrag (AVV) unterzeichnen.' },
+      { q: 'Kann ich die Website selbst bearbeiten?', a: 'Selbstverständlich. Ich binde ein einfaches CMS an, mit dem Sie Texte, Bilder und Blogartikel ohne Code ändern können.' },
+      { q: 'Bieten Sie Support nach dem Launch?', a: 'Ja — monatliche Pakete umfassen Hosting, Updates, Backups, kleine Änderungen und Verbesserungen am Chatbot.' },
+    ],
+  },
+  contact: {
+    eyebrow: 'Kontakt',
+    title: 'Lassen Sie uns gemeinsam etwas Großartiges bauen',
+    subtitle: 'Erzählen Sie mir von Ihrem Projekt. Innerhalb von 24 Stunden erhalten Sie Ideen und eine kostenlose Einschätzung.',
+    name: 'Ihr Name',
+    email: 'E-Mail',
+    service: 'Leistung',
+    budget: 'Budget',
+    message: 'Projektdetails',
+    messagePlaceholder: 'Was möchten Sie umsetzen? Gibt es eine Deadline?',
+    send: 'Nachricht senden',
+    success: 'Ihr E-Mail-Programm öffnet sich mit der fertigen Nachricht — einfach auf Senden klicken. Danke!',
+    or: 'oder direkt kontaktieren',
+    whatsapp: 'WhatsApp',
+    emailMe: 'E-Mail',
+    booking: 'Termin buchen',
+    select: 'Auswählen…',
+    budgets: ['< 1.000 €', '1.000 – 3.000 €', '3.000 – 10.000 €', '> 10.000 €', 'Noch unklar'],
+    other: 'Sonstiges',
+    required: 'Bitte geben Sie Name, E-Mail und Nachricht ein.',
+  },
+  footer: {
+    tagline: 'KI-Chatbots, Web- und Mobile-Apps und Design für ambitionierte Unternehmen.',
+    rights: 'Alle Rechte vorbehalten.',
+    backToTop: 'Nach oben',
+    location: 'Mit Sitz in Florenz, Italien · Weltweit tätig',
+  },
+};
+
+export const dictionaries: Record<Locale, Dict> = { en, it, nl, fr, de };
+
+export function isLocale(value: string | undefined): value is Locale {
+  return !!value && (locales as readonly string[]).includes(value);
+}
