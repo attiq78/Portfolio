@@ -10,7 +10,7 @@ export const site = {
   /** Short brand shown next to the logo mark */
   brand: 'Attiq.dev',
   /** Public URL once deployed (used for SEO / social previews) */
-  url: 'https://www.example.com',
+  url: 'https://portfolio-sael.vercel.app',
   /** Full name and job title, used in Google's structured data */
   fullName: 'Muhammad Attiq',
   jobTitle: 'Freelance Full-Stack & AI Chatbot Developer',
