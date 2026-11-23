@@ -56,7 +56,7 @@ export interface Project {
 }
 
 /**
- * Showcase projects. "flock" is the full-stack shop included in this repo (/shop).
+ * Showcase projects. "flock" is the full-stack shop, kept in its own repo (Flock-by-Attiq).
  * The others are marked as concepts — replace them with real client work as you get it.
  */
 export const projects: Project[] = [
@@ -64,7 +64,7 @@ export const projects: Project[] = [
     id: 'flock',
     status: 'live',
     tags: ['Next.js', 'MongoDB', 'Stripe', 'AI assistant'],
-    href: '/shop',
+    href: 'https://github.com/attiq78/Flock-by-Attiq',
     accent: 'violet',
   },
   {
