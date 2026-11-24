@@ -22,10 +22,10 @@ export const site = {
   /** Approximate city-centre coordinates — not your home address */
   geo: { lat: 43.7696, lng: 11.2558 },
 
-  // TODO: replace with your real contact details
-  email: 'hello@example.com',
+  /** Contact form messages are delivered here (sending is set up in src/pages/api/contact.ts). */
+  email: 'attique.dev@gmail.com',
   /** International format, digits only — used for the WhatsApp link */
-  whatsapp: '390000000000',
+  whatsapp: '393447205586',
   linkedin: 'https://www.linkedin.com/in/attique-dev/',
   github: 'https://github.com/attiq78',
   /** e.g. a Calendly / Cal.com link. Leave '' to hide the "Book a call" link. */
